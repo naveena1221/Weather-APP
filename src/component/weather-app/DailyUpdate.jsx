@@ -9,13 +9,11 @@ function DailyUpdate() {
     const [loading,setLoading]=useState(true);
     const [dailyData, setDailyData]=useState(null);
     const {state:{latitude,longitude,city}}=useLocation();
-    console.log(latitude,longitude,city);
 
     const fetchDailyData=async()=>{
         try{
             const response= await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,rain_sum,showers_sum,snowfall_sum,wind_speed_10m_max`, {method:"GET"});
             const data= await response.json();
-            console.log(data);
             setDailyData(data);
             setLoading(false);
         }

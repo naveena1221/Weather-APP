@@ -13,6 +13,7 @@ function BackGroundLayout({ weatherData, children }) {
       switch (condition) {
         case 'clear':
           setBackgroundImage(Clear);
+          
           break;
         case 'clouds':
           setBackgroundImage(Cloudy);
@@ -22,6 +23,7 @@ function BackGroundLayout({ weatherData, children }) {
           setBackgroundImage(Rainy);
           break;
         case 'snow': setBackgroundImage(Snow);
+        break;
         default:
           setBackgroundImage(Clear); // Default background image
           break;
