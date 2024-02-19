@@ -31,13 +31,13 @@ function HourlyUpdate() {
         if (loading) {
             fetchHourlyData();
         }
-    }, [loading, fetchHourlyData]);
-    
+    }, []);
+
     useEffect(() => {
         if (hourlyData) {
             renderChart();
         }
-    }, [hourlyData, renderChart]);
+    }, [hourlyData]);
 
     const renderChart = () => {
         if (!canvasRef.current) return;
